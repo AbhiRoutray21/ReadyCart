@@ -658,4 +658,3 @@ const products = [
     ]
   }
 ];
-
