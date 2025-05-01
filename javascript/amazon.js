@@ -1,3 +1,6 @@
+import {cart} from '../data/cart.js';
+import {products} from '../data/products.js'
+
 let productsHTML = '';    
 products.forEach((product) =>{
     productsHTML += `
@@ -54,6 +57,7 @@ products.forEach((product) =>{
 document.querySelector('.products-grid').
 innerHTML = productsHTML;
 
+let timeoutId;
 document.querySelectorAll('.add-to-cart-button')
 .forEach((button) =>{
   // console.log(button);
@@ -61,9 +65,9 @@ document.querySelectorAll('.add-to-cart-button')
       const productId = button.dataset.productId;
       const quantitySelector = document.querySelector(`.product-quantity-${productId}`);
       const quantity = Number(quantitySelector.value);
-     
+      clearTimeout(timeoutId);
       document.querySelector(`.nofiyAdded-${productId}`).style.opacity = '1';
-      setTimeout(()=>{
+      timeoutId = setTimeout(()=>{
         document.querySelector(`.nofiyAdded-${productId}`).style.opacity = '0';
       },800);
 
