@@ -87,5 +87,4 @@ document.querySelectorAll('.add-to-cart-button')
 });
 
 
-
     

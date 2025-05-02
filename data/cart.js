@@ -30,5 +30,14 @@ export function removeFromCart(productId){
     }
    });
   cart = newCart; 
-  saveToStorage();   
+  saveToStorage(); 
+  CheckoutTotalItem();
+}
+
+export function CheckoutTotalItem(){
+  let totalQuantity = 0;
+  cart.forEach((cartItem) => {
+   totalQuantity += cartItem.quantity ;
+   document.querySelector('.return-to-home-link').innerHTML = `${totalQuantity} items`;
+  });
 }

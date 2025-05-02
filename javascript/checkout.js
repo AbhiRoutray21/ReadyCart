@@ -1,4 +1,4 @@
-import {cart,removeFromCart} from "../data/cart.js";
+import {cart,removeFromCart,CheckoutTotalItem} from "../data/cart.js";
 import {products} from "../data/products.js";
 import {formatCurrancy} from "../utils/money.js";
 
@@ -97,10 +97,12 @@ document.querySelector('.order-summary').innerHTML = cartSummary;
 document.querySelectorAll('.delete-quantity-link')
 .forEach((deleteLink)=>{
     deleteLink.addEventListener('click',()=>{
-     const productId = deleteLink.dataset.productId;
+        const productId = deleteLink.dataset.productId;
         removeFromCart(productId);
         document.querySelector(`.cart-item-${productId}`).remove();
     });
 });
+
+CheckoutTotalItem();
 
 
