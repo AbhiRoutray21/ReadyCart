@@ -209,3 +209,10 @@
   margin-top: 11px;
   margin-bottom: 15px;
 }
+
+.input-save-field{
+  display:none;
+}
+.quantity-label,.update-quantity-link{
+  display: initial;
+}

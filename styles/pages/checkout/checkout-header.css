@@ -72,6 +72,8 @@
   font-size: 23px;
   text-decoration: none;
   cursor: pointer;
+  box-sizing:border-box;
+  padding-top: 3px;
 }
 
 @media (max-width: 1000px) {
