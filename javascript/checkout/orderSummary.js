@@ -5,6 +5,7 @@ import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import {deliveryOptions} from "../../data/deliveryOptions.js";
 import {renderPaymentSummary} from "./paymentSummary.js"
 
+console.log('testing..');
 
 export function renderOrderSummary(){
 const today = dayjs();
