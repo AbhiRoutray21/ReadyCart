@@ -6,7 +6,6 @@ import {deliveryOptions} from "../../data/deliveryOptions.js";
 import {renderPaymentSummary} from "./paymentSummary.js"
 
 
-
 export function renderOrderSummary(){
 const today = dayjs();
 
