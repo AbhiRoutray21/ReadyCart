@@ -41,7 +41,9 @@ products.forEach((product) =>{
               <option value="10">10</option>
             </select>
           </div>
-
+          <div>
+          ${product.extraInfoHTML()}
+          </div>
           <div class="product-spacer"></div>
 
           <div class="added-to-cart nofiyAdded-${product.id}">
@@ -56,8 +58,6 @@ products.forEach((product) =>{
         </div>`;  
 });   
 document.querySelector('.products-grid').innerHTML = productsHTML;
-
-showCartQuantity();
 
 let timeoutId;
 document.querySelectorAll('.add-to-cart-button')

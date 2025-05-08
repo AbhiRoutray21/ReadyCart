@@ -1,3 +1,42 @@
+
+class Products {
+ id;
+ image;
+ name;
+ rating;
+ priceCents;
+
+ constructor(productDetails){
+  this.id = productDetails.id;
+  this.image = productDetails.image;
+  this.name = productDetails.name;
+  this.rating = productDetails.rating;
+  this.priceCents = productDetails.priceCents;
+ }
+
+ extraInfoHTML(){
+  return '';
+ } 
+}
+
+class Clothing extends Products {
+  sizeChartLink;
+
+  constructor(productDetails){
+    super(productDetails);
+    this.sizeChartLink = productDetails.sizeChartLink;
+  }
+
+  extraInfoHTML(){
+    return `
+     <a href="${this.sizeChartLink}" target="_blank">
+       Size chart
+     </a>   
+    `;
+  }
+}
+
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -657,4 +696,10 @@ export const products = [
       "mens"
     ]
   }
-];
+].map((productDetails) =>{
+  if(productDetails.type === 'clothing'){
+    return new Clothing(productDetails);
+  }
+   return new Products(productDetails);
+}); 
+
