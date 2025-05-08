@@ -39,7 +39,7 @@ class Cart {
             }
         });
         this.cartItem = newCart; 
-        this.cartItem.saveToStorage(); 
+        this.saveToStorage(); 
         document.querySelector('.return-to-home-link').innerHTML = `${this.showCartQuantity()} items`;
     }
     showCartQuantity(){
@@ -74,20 +74,11 @@ class Cart {
 
 };
 
+export let cart = new Cart('cart');
+ 
+
     
-    let cart = new Cart('NewCart');
-    cart.addToCart('15b6fc6f-327a-4ec4-896f-486349e85a3d',1);
-    
-    let businessCart = new Cart('businessCart');
-    businessCart.addToCart('15b6fc6f-327a-4ec4-896f-486349e85a3d',5);
-    console.log(cart);
-    console.log(businessCart);
-    
-    // let cart1 = Cart('cart1');
-    // cart1.lodeFromStorage()
-    // cart1.addToCart('15b6fc6f-327a-4ec4-896f-486349e85a3d',5);
-    // console.log(cart1);
-    
+ 
     
     
     

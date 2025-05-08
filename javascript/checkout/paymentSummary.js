@@ -1,4 +1,4 @@
-import {cart} from "../../data/cart.js";
+import {cart} from "../../data/cart-class.js";
 import {products} from "../../data/products.js";
 import {formatCurrancy} from "../utils/money.js";
 import {deliveryOptions} from "../../data/deliveryOptions.js";
@@ -10,7 +10,7 @@ let shippingPrice = [];
 let totalQuantity = 0;
 let totalShipping = 0;
 let totalItems = 0;
-  cart.forEach((cartItem,index) => {
+  cart.cartItem.forEach((cartItem,index) => {
       products.forEach((product)=>{
         if(cartItem.productId === product.id){
          // Quantities[index] = cartItem.quantity * product.priceCents ; We can also do this..
