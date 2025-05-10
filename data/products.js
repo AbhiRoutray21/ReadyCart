@@ -1,4 +1,6 @@
 
+export let products = [];
+
 class Products {
  id;
  image;
@@ -60,7 +62,31 @@ class Appliances extends Products {
   } 
 }
 
+export function loadproductfetch(){
+const promise = fetch('https://supersimplebackend.dev/products')
+ .then((response)=>{
+   return response.json();
+ }).then((productdata)=>{
+    products = productdata.map((productDetails) =>{
+      if(productDetails.type === 'clothing'){
+        return new Clothing(productDetails);
+      }
+      if(productDetails.type === 'appliance'){
+        return new Appliances(productDetails);
+      }
+       return new Products(productDetails);
+    });
+    console.log(products);
+ });
 
+ return promise;
+}
+
+
+
+
+
+/*
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -741,4 +767,4 @@ export const products = [
   }
    return new Products(productDetails);
 }); 
- 
+*/
